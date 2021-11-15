@@ -10,7 +10,9 @@ class PhotoSerializer(serializers.ModelSerializer):
 
 
 class AccountSerializer(serializers.ModelSerializer):
-    photo = PhotoSerializer()
+    photo = PhotoSerializer(required=False)
+    phone = serializers.CharField(required=False)
+    type_persona = serializers.CharField(required=False)
 
     class Meta:
         model = Account

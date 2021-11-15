@@ -38,6 +38,8 @@ class Photo(TimeStampedModel):
     def __str__(self):
         return self.title
 
+# class DevicePush()
+
 
 class Account(TimeStampedModel):
 
@@ -73,6 +75,8 @@ class Account(TimeStampedModel):
         null=True,
         default=1
     )
+    tokenPush = models.CharField(
+        'TokenPush', null=True, blank=True, max_length=256)
 
     def __str__(self):
         return str(self.name) + " " + str(self.last_name) + " " + str(self.phone)
