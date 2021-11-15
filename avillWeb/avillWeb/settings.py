@@ -63,6 +63,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8000",
     "http://192.168.1.2:8000",
+    "https://api.avill.com.co",
 ]
 
 ROOT_URLCONF = 'avillWeb.urls'
@@ -93,9 +94,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dbavill',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'USER': 'ronko',
+        'PASSWORD': 'R8t64L0qrZOkcN.OKLEI',
+        'HOST': 'dbavill.cjqwhxzysfzg.us-east-1.rds.amazonaws.com',
         'PORT': 5432,
     }
 }
