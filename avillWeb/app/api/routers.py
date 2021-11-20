@@ -1,7 +1,7 @@
 from rest_framework.routers import DefaultRouter
 from ..account.views import AccountViewset
 from ..servicios.views import ServiciosViewset, Type_serviciosViewset
-from ..pedidos.views import PedidosViewset, PedidosActividViewset, PedidosUpdateViewset, PedidoVehiculoViewset
+from ..pedidos.views import *
 from ..vehiculo.views import VehiculoViewset
 
 router = DefaultRouter()
@@ -16,5 +16,9 @@ router.register(r'ordersup', PedidosUpdateViewset, basename='ordersup')
 #                 basename='ordersconduc')
 router.register(r'activiorders', PedidosActividViewset, basename='actpedidos')
 router.register(r'cars', VehiculoViewset, basename='cars')
+router.register(r'ratting/account', RatingAccountViewset,
+                basename='rattingAccount')
+router.register(r'ratting/order', RatingPedidoViewset,
+                basename='rattingPedido')
 
 urlpatterns = router.urls

@@ -49,8 +49,8 @@ class Account(TimeStampedModel):
 
     identidy = models.BigIntegerField(
         'Identificacion', null=True, default=0, blank=True)
-    name = models.CharField('Nombre', max_length=100)
-    last_name = models.CharField('Apellidos', max_length=100)
+    name = models.CharField('Nombre', max_length=100, blank=True)
+    last_name = models.CharField('Apellidos', max_length=100, blank=True)
     email = models.EmailField('Email', blank=True)
     phone = models.BigIntegerField('Teléfono', unique=True)
     password = models.CharField(
@@ -77,6 +77,7 @@ class Account(TimeStampedModel):
     )
     tokenPush = models.CharField(
         'TokenPush', null=True, blank=True, max_length=256)
+    puntos = models.FloatField('Puntos', default=1, blank=True, null=True)
 
     def __str__(self):
         return str(self.name) + " " + str(self.last_name) + " " + str(self.phone)
