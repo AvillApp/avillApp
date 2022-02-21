@@ -65,7 +65,10 @@ class Account(TimeStampedModel):
     type_persona = models.ForeignKey(
         Type_Account,
         verbose_name="Type account",
-        on_delete=models.CASCADE
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        default=1,
     )
     estado = models.ForeignKey(
         Estado,

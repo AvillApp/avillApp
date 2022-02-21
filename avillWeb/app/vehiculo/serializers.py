@@ -4,7 +4,8 @@ from ..account.serializers import AccountSerializer
 
 
 class VehiculoSerializer(serializers.ModelSerializer):
-    persona = AccountSerializer()
+    persona = AccountSerializer(required=False)
+    persona_id = serializers.IntegerField(required=False)
 
     class Meta:
         model = Vehiculo
