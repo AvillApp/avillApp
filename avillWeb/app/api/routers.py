@@ -3,6 +3,7 @@ from ..account.views import AccountViewset
 from ..servicios.views import ServiciosViewset, Type_serviciosViewset
 from ..pedidos.views import *
 from ..vehiculo.views import VehiculoViewset
+from ..chat.views import ChatViewset
 
 router = DefaultRouter()
 
@@ -20,5 +21,8 @@ router.register(r'ratting/account', RatingAccountViewset,
                 basename='rattingAccount')
 router.register(r'ratting/order', RatingPedidoViewset,
                 basename='rattingPedido')
+
+router.register(r'chat/order', ChatViewset,
+                basename='chatPedido')           
 
 urlpatterns = router.urls

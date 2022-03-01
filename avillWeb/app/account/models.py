@@ -38,9 +38,6 @@ class Photo(TimeStampedModel):
     def __str__(self):
         return self.title
 
-# class DevicePush()
-
-
 class Account(TimeStampedModel):
 
     class Meta:
@@ -81,6 +78,12 @@ class Account(TimeStampedModel):
     tokenPush = models.CharField(
         'TokenPush', null=True, blank=True, max_length=256)
     puntos = models.FloatField('Puntos', default=1, blank=True, null=True)
+    
+    latitude = models.CharField(
+        'latitude', null=True, blank=True, max_length=256)
+    longitude = models.CharField(
+        'longitude', null=True, blank=True, max_length=256)
+
 
     def __str__(self):
         return str(self.name) + " " + str(self.last_name) + " " + str(self.phone)

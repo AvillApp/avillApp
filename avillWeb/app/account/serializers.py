@@ -14,6 +14,8 @@ class AccountSerializer(serializers.ModelSerializer):
     phone = serializers.CharField(required=False)
     tokenPush = serializers.CharField(required=False)
     puntos = serializers.IntegerField(required=False)
+    latitiude = serializers.CharField(required=False)
+    longitude = serializers.CharField(required=False)
 
     class Meta:
         model = Account
