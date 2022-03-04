@@ -5,6 +5,7 @@ from ..account.serializers import AccountSerializer
 
 class ChatSerializer(serializers.ModelSerializer):
     account = AccountSerializer(required=False)
+    account_id = serializers.IntegerField(required=False)
     
     class Meta:
         model = Chat
