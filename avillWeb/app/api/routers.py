@@ -29,7 +29,7 @@ router.register(r'ratting/order', RatingPedidoViewset,
 router.register(r'chat/order', ChatViewset,
                 basename='chatPedido')  
 
-router.register(r'facturas', FacturaViewset,
+router.register(r'factura', FacturaViewset,
                 basename='Factura')  
 
 router.register(r'facturas/comision', ComisionViewset,
