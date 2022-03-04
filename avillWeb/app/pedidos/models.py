@@ -120,15 +120,7 @@ class RatingPedido(TimeStampedModel):
 def set_puntos(sender, instance, created, **kwargs):
 
     if created:
-        # print("Mis puntos a otorgar", instance.puntos)
-        # print("Puntos de la persona", instance.account.puntos)
         suma = instance.puntos + instance.account.puntos
         prom = suma / 2
-        # print("Valor de la ", suma)
-        # print("Valor de prom", prom)
-
-        # for i in instance.account.puntos:
-        #     suma = suma + instance.account.puntos
-
         instance.account.puntos = prom
         instance.account.save()
