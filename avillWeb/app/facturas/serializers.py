@@ -3,6 +3,8 @@ from .models import Factura, Comision
 
 
 class FacturaSerializer(serializers.ModelSerializer):
+
+    fecha_pago  = serializers.CharField(required=False)
     class Meta:
         model = Factura
         fields = ('__all__')
