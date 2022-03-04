@@ -24,10 +24,8 @@ class Factura(TimeStampedModel):
         verbose_name_plural = 'Facturas'
 
     precio = models.BigIntegerField('Valor')
-    fecha_factura = models.DateField('Fecha de factura')
-    fecha_pago = models.DateField('Fecha de Pago')
+    fecha_pago = models.DateField('Fecha de Pago', blank=True, null=True)
     pedido = models.OneToOneField(Pedidos, on_delete=models.CASCADE)
-
     comision = models.ForeignKey(
         Comision,
         verbose_name='Comision_factura',
