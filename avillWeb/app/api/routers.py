@@ -4,7 +4,7 @@ from ..servicios.views import ServiciosViewset, Type_serviciosViewset
 from ..pedidos.views import *
 from ..vehiculo.views import VehiculoViewset
 from ..chat.views import ChatViewset
-from ..facturas.views import ComisionViewset
+from ..facturas.views import ComisionViewset, FacturaViewset
 
 router = DefaultRouter()
 
@@ -28,6 +28,9 @@ router.register(r'ratting/order', RatingPedidoViewset,
 
 router.register(r'chat/order', ChatViewset,
                 basename='chatPedido')  
+
+router.register(r'facturas', FacturaViewset,
+                basename='Factura')  
 
 router.register(r'facturas/comision', ComisionViewset,
                 basename='comisionFactura')  
