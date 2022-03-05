@@ -17,7 +17,7 @@ class FacturaViewset(viewsets.ModelViewSet):
         filters.OrderingFilter,
     ]
     filterset_fields = ('__all__')
-    search_fields = ('__all__')
+    search_fields = ["=pedido__vehiculo__persona__id"]
     ordering_fields = ('__all__')
 
 class ComisionViewset(viewsets.ModelViewSet):
