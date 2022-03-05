@@ -26,7 +26,6 @@ class PhotoViewset(viewsets.ModelViewSet):
     serializer_class = PhotoSerializer
 
     filter_backends = [
-        DjangoFilterBackend,
         filters.SearchFilter,
         filters.OrderingFilter,
     ]
