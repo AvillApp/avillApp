@@ -16,6 +16,7 @@ class AccountSerializer(serializers.ModelSerializer):
     puntos = serializers.IntegerField(required=False)
     latitiude = serializers.CharField(required=False)
     longitude = serializers.CharField(required=False)
+    photo_id = serializers.IntegerField(required=False)
 
     class Meta:
         model = Account
