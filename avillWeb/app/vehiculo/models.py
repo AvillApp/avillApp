@@ -17,7 +17,7 @@ class Vehiculo(TimeStampedModel):
         on_delete=models.SET_NULL,
         related_name='photo_vehiculo'
     )
-    estado = models.BooleanField('Estado', default=False)
+    estado = models.BooleanField('Estado', default=True)
     servicio = models.ForeignKey(
         Servicios,
         related_name="Servicios",

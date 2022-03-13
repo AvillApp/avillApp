@@ -4,7 +4,7 @@ from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 
 from ..account.models import Account, Estado
-from ..vehiculo.models import Vehiculo
+from ..vehiculo.models import Vehiculo, Servicios
 
 
 class Pedidos(TimeStampedModel):
@@ -27,8 +27,15 @@ class Pedidos(TimeStampedModel):
         'Telefono alternativo', null=True, blank=True)
     tiempo = models.IntegerField('Tiempo', null=True, blank=True)
     precio = models.BigIntegerField('Precio', null=True, blank=True)
-    solicitud = models.CharField(
-        'Serivicio_solicitud', max_length=100, null=True, blank=True)
+    # solicitud = models.CharField(
+    #     'Serivicio_solicitud', max_length=100, null=True, blank=True)
+    solicitud = models.ForeignKey(
+        Servicios,
+        related_name="Serivicio_solicitud",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE
+    )
 
     estado = models.ForeignKey(
         Estado,

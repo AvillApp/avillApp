@@ -38,6 +38,12 @@ class Photo(TimeStampedModel):
     def __str__(self):
         return self.title
 
+
+class Sancion(TimeStampedModel):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+
 class Account(TimeStampedModel):
 
     class Meta:
@@ -87,3 +93,4 @@ class Account(TimeStampedModel):
 
     def __str__(self):
         return str(self.name) + " " + str(self.last_name) + " " + str(self.phone)
+

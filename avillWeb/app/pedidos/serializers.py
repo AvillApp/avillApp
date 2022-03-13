@@ -3,10 +3,12 @@ from rest_framework.relations import ManyRelatedField
 from .models import Pedidos, PedidosActivid, RatingAccount, RatingPedido
 from ..vehiculo.serializers import VehiculoSerializer
 from ..account.serializers import AccountSerializer
+from ..servicios.serializers import ServiciosSerializer
 
 
 class PedidosSerializer(serializers.ModelSerializer):
     vehiculo = VehiculoSerializer(required=False)
+    solicitud = ServiciosSerializer(required=False)
 
     class Meta:
         model = Pedidos
