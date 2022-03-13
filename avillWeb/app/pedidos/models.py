@@ -27,15 +27,8 @@ class Pedidos(TimeStampedModel):
         'Telefono alternativo', null=True, blank=True)
     tiempo = models.IntegerField('Tiempo', null=True, blank=True)
     precio = models.BigIntegerField('Precio', null=True, blank=True)
-    # solicitud = models.CharField(
-    #     'Serivicio_solicitud', max_length=100, null=True, blank=True)
-    solicitud = models.ForeignKey(
-        Servicios,
-        related_name="solicitud",
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE
-    )
+    solicitud = models.CharField(
+        'Serivicio_solicitud', max_length=100, null=True, blank=True)
 
     estado = models.ForeignKey(
         Estado,
