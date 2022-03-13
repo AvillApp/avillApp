@@ -1,3 +1,4 @@
+from django.forms import IntegerField
 from rest_framework import serializers
 from rest_framework.relations import ManyRelatedField
 from .models import Pedidos, PedidosActivid, RatingAccount, RatingPedido
@@ -9,6 +10,7 @@ from ..servicios.serializers import ServiciosSerializer
 class PedidosSerializer(serializers.ModelSerializer):
     vehiculo = VehiculoSerializer(required=False)
     solicitud = ServiciosSerializer(required=False)
+    solicitud_id = IntegerField(required=False)
 
     class Meta:
         model = Pedidos

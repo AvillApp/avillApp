@@ -31,7 +31,7 @@ class Pedidos(TimeStampedModel):
     #     'Serivicio_solicitud', max_length=100, null=True, blank=True)
     solicitud = models.ForeignKey(
         Servicios,
-        related_name="Serivicio_solicitud",
+        related_name="solicitud",
         null=True,
         blank=True,
         on_delete=models.CASCADE
