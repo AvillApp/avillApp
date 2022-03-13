@@ -21,11 +21,14 @@ class Vehiculo(TimeStampedModel):
     servicio = models.ForeignKey(
         Servicios,
         related_name="Servicios",
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
     )
     persona = models.ForeignKey(
         Account,
         related_name='vehiculo_persona',
+        null=True,
         blank=True,
         on_delete=models.CASCADE
     )
