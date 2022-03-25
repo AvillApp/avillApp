@@ -66,6 +66,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://192.168.1.2:8000",
     "https://api.avill.com.co",
+    "https://exp.host/--/api/v2/push/send",
 ]
 
 ROOT_URLCONF = 'avillWeb.urls'
