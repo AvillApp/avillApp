@@ -16,5 +16,5 @@ class VehiculoViewset(viewsets.ModelViewSet):
         filters.OrderingFilter,
     ]
     filterset_fields = ('__all__')
-    search_fields = ('__all__')
+    search_fields = ["=servicio__nombre"]
     ordering_fields = ('__all__')

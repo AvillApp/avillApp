@@ -29,6 +29,7 @@ class Pedidos(TimeStampedModel):
     precio = models.BigIntegerField('Precio', null=True, blank=True)
     solicitud = models.CharField(
         'Serivicio_solicitud', max_length=100, null=True, blank=True)
+    
 
     estado = models.ForeignKey(
         Estado,

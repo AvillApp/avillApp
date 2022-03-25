@@ -19,7 +19,7 @@ class PedidosViewset(viewsets.ModelViewSet):
         filters.OrderingFilter,
     ]
     filterset_fields = ('__all__')
-    search_fields = ["=vehiculo__persona__id"]
+    search_fields = ["=vehiculo__persona__id", "=vehiculo__servicio__id"]
     ordering_fields = ('__all__')
 
 
