@@ -1,5 +1,5 @@
 from rest_framework.routers import DefaultRouter
-from ..account.views import AccountViewset, PhotoViewset
+from ..account.views import AccountViewset, PhotoViewset, NotifyViewset
 from ..servicios.views import ServiciosViewset, Type_serviciosViewset
 from ..pedidos.views import *
 from ..vehiculo.views import VehiculoViewset
@@ -34,6 +34,9 @@ router.register(r'factura', FacturaViewset,
 
 router.register(r'facturas/comision', ComisionViewset,
                 basename='comisionFactura')  
+
+router.register(r'notify', NotifyViewset,
+                basename='notify')  
 
 
 urlpatterns = router.urls

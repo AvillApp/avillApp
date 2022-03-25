@@ -94,3 +94,13 @@ class Account(TimeStampedModel):
     def __str__(self):
         return str(self.name) + " " + str(self.last_name) + " " + str(self.phone)
 
+
+class Notify(TimeStampedModel):
+    msg = models.CharField('Mensaje', null=True, blank=True, max_length=50)
+    Account = models.ForeignKey(
+        Account,
+        verbose_name='Notificacions_account',
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )

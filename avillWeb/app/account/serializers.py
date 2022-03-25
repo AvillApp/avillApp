@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Account, Photo
+from .models import Account, Photo, Notify
 
 
 class PhotoSerializer(serializers.ModelSerializer):
@@ -20,4 +20,10 @@ class AccountSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Account
+        fields = '__all__'
+
+class NotifySerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Notify
         fields = '__all__'
