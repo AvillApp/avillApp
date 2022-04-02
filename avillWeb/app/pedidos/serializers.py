@@ -8,6 +8,7 @@ from ..account.serializers import AccountSerializer
 
 class PedidosSerializer(serializers.ModelSerializer):
     vehiculo = VehiculoSerializer(required=False)
+    account = AccountSerializer(required=False)
 
     class Meta:
         model = Pedidos
