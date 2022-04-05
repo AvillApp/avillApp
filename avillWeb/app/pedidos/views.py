@@ -22,6 +22,20 @@ class PedidosViewset(viewsets.ModelViewSet):
     search_fields = ["=vehiculo__persona__id", "=vehiculo__servicio__id"]
     ordering_fields = ('__all__')
 
+class PedidosWebViewset(viewsets.ModelViewSet):
+    
+    queryset = Pedidos.objects.all()
+    serializer_class = PedidosWebSerializer
+
+    filter_backends = [
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter,
+    ]
+    filterset_fields = ('__all__')
+    search_fields = ["=vehiculo__persona__id", "=vehiculo__servicio__id"]
+    ordering_fields = ('__all__')
+
 
 class PedidosUpdateViewset(viewsets.ModelViewSet):
 

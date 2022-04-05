@@ -13,6 +13,13 @@ class PedidosSerializer(serializers.ModelSerializer):
         model = Pedidos
         fields = ('__all__')
 
+class PedidosWebSerializer(serializers.ModelSerializer):
+    vehiculo = VehiculoSerializer(required=False)
+    account = AccountSerializer(required=False)
+    
+    class Meta:
+        model = Pedidos
+        fields = ('__all__')
 
 class PedidosUpdateSerializer(serializers.ModelSerializer):
 

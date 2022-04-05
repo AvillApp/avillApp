@@ -16,6 +16,7 @@ router.register(r'typeservices', Type_serviciosViewset,
                 basename='typeservices')
 router.register(r'orders', PedidosViewset, basename='orders')
 router.register(r'ordersup', PedidosUpdateViewset, basename='ordersup')
+router.register(r'ordersWeb', PedidosWebViewset, basename='ordersWeb')
 
 # router.register(r'ordersconduc/<pk>/',  PedidoVehiculoViewset,
 #                 basename='ordersconduc')
