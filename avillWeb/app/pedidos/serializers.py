@@ -1,4 +1,3 @@
-from django.forms import IntegerField
 from rest_framework import serializers
 from rest_framework.relations import ManyRelatedField
 from .models import Pedidos, PedidosActivid, RatingAccount, RatingPedido

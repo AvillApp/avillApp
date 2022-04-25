@@ -7,6 +7,14 @@ from ..account.models import Account, Estado
 from ..vehiculo.models import Vehiculo, Servicios
 
 
+class Source(TimeStampedModel):
+
+    name = models.CharField(
+        'Nombre', max_length=256, null=True, blank=True)
+    
+    def __str__(self):
+        return str(self.name)
+
 class Pedidos(TimeStampedModel):
 
     class Meta:
@@ -30,13 +38,22 @@ class Pedidos(TimeStampedModel):
     solicitud = models.CharField(
         'Serivicio_solicitud', max_length=100, null=True, blank=True)
     
+    source = models.ForeignKey(
+        Source,
+        verbose_name='Source_pedido',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=1
+    )
 
     estado = models.ForeignKey(
         Estado,
         verbose_name='Estado_pedido',
         on_delete=models.CASCADE,
         null=True,
-        blank=True
+        blank=True,
+        default=3
     )
     account = models.ForeignKey(
         Account,
