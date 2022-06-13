@@ -2,6 +2,7 @@ from model_utils.models import TimeStampedModel
 from django.db import models
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
+from datetime import datetime
 
 from ..account.models import Account, Estado
 from ..vehiculo.models import Vehiculo, Servicios
@@ -36,8 +37,9 @@ class Pedidos(TimeStampedModel):
     tiempo = models.IntegerField('Tiempo', null=True, blank=True)
     precio = models.BigIntegerField('Precio', null=True, blank=True)
     solicitud = models.CharField(
-        'Serivicio_solicitud', max_length=100, null=True, blank=True)
+        'Servicio_solicitud', max_length=100, null=True, blank=True)
     
+    fecha = models.DateField('Fecha', auto_now_add=True, null=True, blank=True)
     source = models.ForeignKey(
         Source,
         verbose_name='Source_pedido',
@@ -133,6 +135,13 @@ class RatingPedido(TimeStampedModel):
         on_delete=models.CASCADE
     )
 
+
+@receiver(pre_save, sender=Pedidos)
+def set_date(sender, instance, **kwargs):
+    
+    date = datetime.today().strftime('%Y-%m-%d')
+    print("fecha: ", date)
+    instance.fecha = date
 
 @receiver(post_save, sender=RatingAccount)
 def set_puntos(sender, instance, created, **kwargs):
