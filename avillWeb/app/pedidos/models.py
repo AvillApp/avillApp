@@ -39,7 +39,7 @@ class Pedidos(TimeStampedModel):
     solicitud = models.CharField(
         'Servicio_solicitud', max_length=100, null=True, blank=True)
     
-    fecha = models.DateField('Fecha', auto_now_add=True, null=True, blank=True)
+    fecha = models.DateField('Fecha', auto_now_add=True)
     source = models.ForeignKey(
         Source,
         verbose_name='Source_pedido',
@@ -136,12 +136,12 @@ class RatingPedido(TimeStampedModel):
     )
 
 
-@receiver(pre_save, sender=Pedidos)
-def set_date(sender, instance, **kwargs):
+# @receiver(pre_save, sender=Pedidos)
+# def set_date(sender, instance, **kwargs):
     
-    date = datetime.today().strftime('%Y-%m-%d')
-    print("fecha: ", date)
-    instance.fecha = date
+#     date = datetime.today().strftime('%Y-%m-%d')
+#     print("fecha: ", date)
+#     instance.fecha = date
 
 @receiver(post_save, sender=RatingAccount)
 def set_puntos(sender, instance, created, **kwargs):
