@@ -38,8 +38,7 @@ class Pedidos(TimeStampedModel):
     precio = models.BigIntegerField('Precio', null=True, blank=True)
     solicitud = models.CharField(
         'Servicio_solicitud', max_length=100, null=True, blank=True)
-    
-    # fecha = models.DateField('Fecha', auto_now_add=True)
+    fecha = models.DateField('Fecha', auto_now_add=True)
     source = models.ForeignKey(
         Source,
         verbose_name='Source_pedido',
