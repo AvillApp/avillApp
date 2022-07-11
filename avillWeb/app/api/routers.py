@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 from ..account.views import AccountViewset, PhotoViewset, NotifyViewset
-from ..servicios.views import ServiciosViewset, Type_serviciosViewset
+from ..servicios.views import ServiciosViewset, Type_serviciosViewset, ServicesViewset
 from ..pedidos.views import *
 from ..vehiculo.views import VehiculoViewset
 from ..chat.views import ChatViewset
@@ -14,6 +14,7 @@ router.register(r'photos', PhotoViewset, basename='photos')
 router.register(r'services', ServiciosViewset, basename='services')
 router.register(r'typeservices', Type_serviciosViewset,
                 basename='typeservices')
+router.register(r'servicios', ServicesViewset, basename='servicios')
 router.register(r'orders', PedidosViewset, basename='orders')
 router.register(r'ordersup', PedidosUpdateViewset, basename='ordersup')
 router.register(r'ordersWeb', PedidosWebViewset, basename='ordersWeb')

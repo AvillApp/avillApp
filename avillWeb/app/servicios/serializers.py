@@ -12,3 +12,9 @@ class ServiciosSerializer(serializers.ModelSerializer):
     class Meta:
         model = Servicios
         fields = ('__all__')
+
+class ServicesSerializer(serializers.ModelSerializer):
+    type_servicios = Type_serviciosSerializer(required=False)
+    class Meta:
+        model = Servicios
+        fields = ('__all__')
